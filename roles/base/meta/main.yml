@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Damien Lagae <damienlagae@gmail.com>
+  description: Initialize a new host (RedHat/CentOS/Debian).
+  company: []
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.9
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  - name: Debian
+    versions:
+    - jessie
+  galaxy_tags:
+    - SCL
+    - EPEL
+    - Timezone
+    - User
+    - SSH
+  dependencies: []

@@ -1,0 +1,11 @@
+---
+- name: Create {{ user }} user account
+  user: name={{ user }} password=user update_password=on_create shell=/bin/bash state=present
+
+- name: Add {{ user }} to sudoers
+  template: src=templates/sudoers-user.j2
+            dest=/etc/sudoers.d/{{ user }}-sudoer
+            validate='visudo -cf %s'
+
+- name: Pushes ssh key to {{ user }}
+  authorized_key: user={{ user }} key="{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"

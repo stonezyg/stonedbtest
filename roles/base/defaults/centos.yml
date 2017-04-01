@@ -1,0 +1,7 @@
+base_package:
+  - sudo
+  - nano
+  - curl
+  - git
+  - libselinux-python
+  - policycoreutils-python
